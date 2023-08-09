@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TODO APP</title>
+  </head>
+  <body>
+    <h1>TODO APP</h1>
+    <div class="container">
+      <div class="left">
+        <form id="form">
+          <label for="post">Write your post here</label>
+          <br /><br />
+          <textarea name="post" id="input" cols="30" rows="10"></textarea>
+          <br /><br />
+          <div id="msg"></div>
+          <button type="submit">Post</button>
+        </form>
+      </div>
+      <div class="right">
+        <h3>Your posts here</h3>
+        <div id="posts">
+          <div>
+            <p>Hello world post 1</p>
+            <span class="options">
+              <i class="fas fa-edit"></i>
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </div>
+
+          <div>
+            <p>Hello world post 2</p>
+            <span class="options">
+              <i class="fas fa-edit"></i>
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let form = document.getElementById("form");
+      let input = document.getElementById("input");
+      let msg = document.getElementById("msg");
+      let posts = document.getElementById("posts");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("Button Clicked!!!");
+        formValidation();
+      });
+      let formValidation = () => {
+        if (input.value === "") {
+          msg.innerHTML = "Post cannot be black";
+          console.log("Fail 🥺");
+        } else {
+          console.log("😁");
+          msg.innerHTML = "";
+        }
+      };
+    </script>
+  </body>
+</html>
